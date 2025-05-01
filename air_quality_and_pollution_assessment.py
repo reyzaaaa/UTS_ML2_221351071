@@ -29,7 +29,7 @@ st.write("Masukkan informasi lingkungan untuk mendapatkan informasi kondisi udar
 
 Temperature = st.number_input("Suhu (°C)", min_value=0.0, max_value=50.0, value=25.0)
 Humidity = st.number_input("Kelembapan (%)", min_value=0.0, max_value=100.0, value=60.0)
-PM2.5 = st.number_input("PM2.5 (µg/m³)", min_value=0.0, max_value=100.0, value=10.0)
+PM25 = st.number_input("PM2.5 (µg/m³)", min_value=0.0, max_value=100.0, value=10.0)
 PM10 = st.number_input("PM10 (µg/m³)", min_value=0.0, max_value=100.0, value=10.0)
 NO2 = st.number_input("NO2 (ppb)", min_value=0.0, max_value=100.0, value=20.0)
 SO2 = st.number_input("SO2 (ppb)", min_value=0.0, max_value=100.0, value=5.0)
@@ -39,7 +39,7 @@ Population_Density = st.number_input("Population Density (per km²)", min_value=
 
 if st.button("Informasi Kualitas Udara"):
     # Preprocess input
-    input_data = np.array([[Temperature,Humidity,PM2.5,PM10,NO2,SO2,CO,Proximity_to_Industrial_Areas,Population_Density]])
+    input_data = np.array([[Temperature,Humidity,PM25,PM10,NO2,SO2,CO,Proximity_to_Industrial_Areas,Population_Density]])
     input_scaled = scaler.transform(input_data).astype(np.float32)
 
     # Predict the air quality
