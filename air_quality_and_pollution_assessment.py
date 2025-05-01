@@ -43,7 +43,11 @@ if st.button("Informasi Kualitas Udara"):
     input_scaled = scaler.transform(input_data).astype(np.float32)
 
     # Predict the air quality
-    predicted_class = model.predict(input_scaled)
-    predicted_air = le.inverse_transform(predicted_class)[0]
+    interpreter.set_tensor(input_details[0]['index'], input_scaled)
+    interpreter.invoke()
+    prediction = interpreter.get_tensor(output_details[0]['index'])
+    
+    predicted_label = np.argmax(prediction)
+    crop_name = label_encoder.inverse_transform([predicted_label])[0]
 
-    st.success(f"Kualitas Udara: **{predicted_air.upper()}**")
+    st.success(f"Kualitas Udara: **{crop_name.upper()}**")
