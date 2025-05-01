@@ -33,7 +33,7 @@ PM25 = st.number_input("PM2.5 (µg/m³)", min_value=0.0, max_value=100.0, value=
 PM10 = st.number_input("PM10 (µg/m³)", min_value=0.0, max_value=100.0, value=10.0)
 NO2 = st.number_input("NO2 (ppb)", min_value=0.0, max_value=100.0, value=20.0)
 SO2 = st.number_input("SO2 (ppb)", min_value=0.0, max_value=100.0, value=5.0)
-C0 = st.number_input("CO (ppm)", min_value=0.0, max_value=10.0, value=1.0)
+CO = st.number_input("CO (ppm)", min_value=0.0, max_value=10.0, value=1.0)
 Proximity_to_Industrial_Areas = st.number_input("Proximity to Industrial Areas (km)", min_value=0.0, max_value=20.0, value=5.0)
 Population_Density = st.number_input("Population Density (per km²)", min_value=0, max_value=1000, value=500)
 
